@@ -16,6 +16,15 @@ export class TaskService {
     return this.http.get<Task[]>(this.apiUrl); // coming from the backend
   }
 
+  updateTaskReminder(task: Task): Observable<Task> {
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.put<Task>(url, task, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
+  }
+
   deleteTask(task: Task): Observable<Task> {
     const url = `${this.apiUrl}/${task.id}`;
     return this.http.delete<Task>(url);
