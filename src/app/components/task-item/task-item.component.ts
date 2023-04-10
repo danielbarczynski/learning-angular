@@ -8,7 +8,7 @@ import { Task } from 'src/app/Task';
   styleUrls: ['./task-item.component.css']
 })
 
-export class TaskItemComponent {
+export class TaskItemComponent {  
   @Input() task!: Task;
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
   @Output() onToggleTask: EventEmitter<Task> = new EventEmitter();
